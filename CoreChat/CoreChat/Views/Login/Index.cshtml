@@ -1,0 +1,62 @@
+﻿@model MvcCoreChatApp.Models.LoginViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Formun diğer bileşenlerini ayarlamak için */
+        .center-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Formun resmin üstünde olması için */
+        }
+
+        /* Resmin formun altında kalması için */
+        .header-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%; /* Formun genişliğine uyacak şekilde */
+            max-width: 600px; /* İsteğe bağlı: Resmin maksimum genişliğini ayarlar */
+            z-index: 1; /* Formun resmin üzerinde olması için */
+        }
+    </style>
+</head>
+<body>
+    <!-- Resim -->
+    <img class="header-image" src="/images/login.png" alt="Header Image">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 center-form">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="userNameInput" class="form-label">Kullanıcı Adı</label>
+                                <input type="text" asp-for="UserName" class="form-control" id="userNameInput" placeholder="Kullanıcı adınızı girin">
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInput" class="form-label">Şifre</label>
+                                <input type="password" asp-for="Password" class="form-control" id="passwordInput" placeholder="Şifrenizi girin">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        Hesabınız yok mu?
+                        <a class="nav-link d-inline p-0 text-primary" asp-area="" asp-controller="Register" asp-action="Index">Kayıt Ol</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

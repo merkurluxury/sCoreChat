@@ -1,0 +1,68 @@
+﻿@model MvcCoreChatApp.Models.RegisterViewModel
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Sayfası</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            padding: 1rem;
+            align-self: center;
+            box-sizing: border-box;
+        }
+
+        .header-image {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 text-center">
+          
+            </div>
+            <div class="col-12 col-md-6 offset-md-3 form-container">
+                <div class="row">
+                    <div class="col-md-6 side-by-side">
+                        <img src="/images/register.png" alt="Başlık resmi" class="header-image">
+                    </div>
+                    <div class="col-md-6 form-wrapper">
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Adınız</label>
+                                <input type="text" asp-for="Name" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Adınızı girin">
+                            </div>
+                            <div class="mb-3">
+                                <label for="userNameInput" class="form-label">Kullanıcı Adı</label>
+                                <input type="text" asp-for="UserName" class="form-control" id="userNameInput" aria-describedby="userNameHelp" placeholder="Kullanıcı adınızı girin">
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInput" class="form-label">Şifre</label>
+                                <input type="password" asp-for="Password" class="form-control" id="passwordInput" aria-describedby="passwordHelp" placeholder="Şifrenizi girin">
+                            </div>
+                            <div class="mb-3">
+                                <label for="imageUrlInput" class="form-label">Resim URL'si</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control" id="imageUrlInput" aria-describedby="imageUrlHelp" placeholder="Resim URL'nizi girin">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
